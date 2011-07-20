@@ -1,0 +1,22 @@
+The JmxRollingFileAppender uses FixedWindowRollingPolicy by default.
+
+logback configuration example:
+<pre>
+<code class="xml">
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="false" debug="false">
+
+  <appender name="file" class="me.shimi.logback.rolling.JmxRollingFileAppender">
+    <File>./logs/myLog.log</File>
+    <encoder>
+      <pattern>[%t] [%4p] [%d{ISO8601}] %c{1}: %m%n</pattern>
+    </encoder>
+    <fileNamePattern>./logs/myLog.log.%i</fileNamePattern>
+  </appender>
+ 
+  <root level="INFO">
+    <appender-ref ref="file" />
+  </root>
+</configuration>
+</code>
+</pre>
