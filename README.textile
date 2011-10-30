@@ -1,10 +1,9 @@
 The JmxRollingFileAppender uses FixedWindowRollingPolicy by default.
 
 logback configuration example:
-<pre>
-<code class="xml">
-<configuration scan="false" debug="false">
 
+<pre>
+<configuration scan="false" debug="false">
   <appender name="file" class="me.shimi.logback.rolling.JmxRollingFileAppender">
     <File>./logs/myLog.log</File>
     <encoder>
@@ -12,10 +11,8 @@ logback configuration example:
     </encoder>
     <fileNamePattern>./logs/myLog.log.%i</fileNamePattern>
   </appender>
- 
   <root level="INFO">
     <appender-ref ref="file" />
   </root>
 </configuration>
-</code>
 </pre>
